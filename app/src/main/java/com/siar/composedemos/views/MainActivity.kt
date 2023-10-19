@@ -7,8 +7,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.siar.composedemos.ui.theme.ComposeDemosTheme
-import com.siar.composedemos.views.components.MessageCard
-import com.siar.composedemos.views.data.Message
+import com.siar.composedemos.views.components.Conversation
+import com.siar.composedemos.views.data.SampleData
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize()
                 ) {
-                    MessageCard(Message("Android", "Jetpack Compose"))
+                    Conversation(messages = SampleData.conversationSample)
                 }
             }
         }
