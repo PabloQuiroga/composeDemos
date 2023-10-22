@@ -1,7 +1,8 @@
 package com.siar.composedemos.views.components
 
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -11,18 +12,18 @@ import com.siar.composedemos.ui.theme.ComposeDemosTheme
 @Composable
 fun Greetings(
     modifier: Modifier = Modifier,
-    names: List<String> = listOf("World", "Compose")
+    names: List<String> = List(1000){ "$it" }
 ) {
-    Column(
+    LazyColumn(
         modifier = modifier.padding(vertical = 4.dp)
     ) {
-        for (name in names) {
+        items(items = names){ name ->
             Greeting(name = name)
         }
     }
 }
 
-@Preview(showBackground = true, widthDp = 320)
+@Preview(showBackground = true, widthDp = 320, heightDp = 480)
 @Composable
 fun GreetingsPreview() {
     ComposeDemosTheme {

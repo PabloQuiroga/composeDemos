@@ -4,7 +4,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -14,7 +14,7 @@ import com.siar.composedemos.ui.theme.ComposeDemosTheme
 fun MyApp(
     modifier: Modifier = Modifier
 ){
-    var shouldShow by remember { mutableStateOf(true) }
+    var shouldShow by rememberSaveable { mutableStateOf(true) }
 
     if (shouldShow) {
         OnboardingScreen(
