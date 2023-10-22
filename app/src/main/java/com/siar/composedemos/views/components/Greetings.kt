@@ -1,5 +1,6 @@
 package com.siar.composedemos.views.components
 
+import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -23,6 +24,10 @@ fun Greetings(
     }
 }
 
+@Preview(
+    name = "Dark", uiMode = UI_MODE_NIGHT_YES,
+    showBackground = true, widthDp = 320, heightDp = 480
+)
 @Preview(showBackground = true, widthDp = 320, heightDp = 480)
 @Composable
 fun GreetingsPreview() {
